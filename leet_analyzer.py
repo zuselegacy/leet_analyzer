@@ -11,7 +11,7 @@ def tagCount():
     tags = [tag for problemProperty in problemMap.values() for tag in problemProperty["tags"]]
     for tag in tags:
         tagMap[tag] = tagMap.get(tag,0) + 1
-    dd = OrderedDict(sorted(tagMap.items(), key=lambda x: x[1]))
+    dd = OrderedDict(sorted(tagMap.items(), key=lambda x: x[1], reverse=True))
     pprint.pprint(dd,width=1)
     print "\n"
     pass
@@ -26,7 +26,7 @@ def tagCountNgram(count=2):
             pass
         tagMap[tagStr] = tagMap.get(tagStr,0) +1
         pass
-    dd = OrderedDict(sorted(tagMap.items(), key=lambda x: x[1]))
+    dd = OrderedDict(sorted(tagMap.items(), key=lambda x: x[1], reverse=True))
     print dd
     print "\n"
 
